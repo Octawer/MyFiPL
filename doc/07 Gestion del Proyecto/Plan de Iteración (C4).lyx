@@ -1,0 +1,1552 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+% DO NOT ALTER THIS PREAMBLE!!!
+%
+% This preamble is designed to ensure that the User's Guide prints
+% out as advertised. If you mess with this preamble,
+% parts of the User's Guide may not print out as expected.  If you
+% have problems LaTeXing this file, please contact 
+% the documentation team
+% email: lyx-docs@lists.lyx.org
+
+\usepackage{ifpdf} % part of the hyperref bundle
+\ifpdf % if pdflatex is used
+
+ % set fonts for nicer pdf view
+ \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
+\fi % end if pdflatex is used
+
+% for correct jump positions whe clicking on a link to a float
+\usepackage[figure]{hypcap}
+
+% the pages of the TOC is numbered roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% define a short command for \textvisiblespace
+\newcommand{\spce}{\textvisiblespace}
+
+% macro for italic page numbers in the index
+\newcommand{\IndexDef}[1]{\textit{#1}}
+
+% for customized page headers/footers
+% only needed because they are only used in one section of the document
+\usepackage{fancyhdr}
+% change header rule width
+\renewcommand{\headrulewidth}{2pt}
+
+% workaround for a makeindex bug, 
+% see sec. "Index Entry Order"
+% only uncomment this when you are using makindex
+%\let\OrgIndex\index 
+%\renewcommand*{\index}[1]{\OrgIndex{#1}}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue, pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\notefontcolor #0000ff
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Plan de Iteración Actual
+\end_layout
+
+\begin_layout Section*
+Iteración Actual
+\end_layout
+
+\begin_layout Itemize
+Construcción 4 (C4)
+\end_layout
+
+\begin_layout Section*
+Objetivos de Alto Nivel
+\end_layout
+
+\begin_layout Itemize
+
+\color black
+completar Arquitectura SW
+\end_layout
+
+\begin_layout Itemize
+implementación UC (85%)
+\end_layout
+
+\begin_layout Itemize
+pruebas UC (85%)
+\end_layout
+
+\begin_layout Itemize
+
+\color black
+iniciar pruebas de integración
+\end_layout
+
+\begin_layout Itemize
+
+\color black
+iniciar pruebas de usabilidad
+\end_layout
+
+\begin_layout Itemize
+refinar Memoria
+\end_layout
+
+\begin_layout Section*
+Items de Trabajo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Descripcion 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Esfuerzo estimado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Area
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Notas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+---
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Panel de Control
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- añadir ult.
+ tecla / color
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- relaciones con los Comandos Sensores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+8h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Req, Dis, Impl, Pru
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Prerrequisito
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- gestion de comandos lógicos
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- eliminar comandos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+10h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Dis, Impl, Pru
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Alta prioridad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+JComboBox
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- cambiar valores en tº ejecución
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+- colores de ComandoColor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+8h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Impl, Pru
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Acciones Robot
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- probar sentencias de control
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- documentar pruebas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+4h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Impl, Pru
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Diseño fondos / robots (sprites)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+20h+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Dis, Impl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Baja prioridad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+UC5 - 6 - 7
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- completar DI´s
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- implementar acciones P.Control
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- realizar y doc pruebas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+4h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Dis, Impl, Pru
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Baja prioridad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+modelo de UC
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- revisar acciones lógicas (CO5)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+2h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Req
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Refinar Memoria
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+- modelo de negocio ?
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- apartado impl
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+- apartado pruebas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+2h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Despl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+valoración iteración (C4)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+1h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+G.Pr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+changelog y aspectos abiertos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+1h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+Otros
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+definir Plan de Iteración siguiente (C5 o T1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+1h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color black
+G.Pr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problemas y Aspectos Abiertos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Problema
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Estado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Nota
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Color / Key
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+en revisión
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UML
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pendiente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+acoplamiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+en revisión
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sents.
+ control
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+en revisión
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+concurrencia 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pendiente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sent Wait
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+en revisión
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+las implementaciones de estas clases se hacen extendiendo las de Java (security.K
+ey, y java.awt.Color)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+buscar una forma mas limpia de hacerlas ...
+\end_layout
+
+\begin_layout Enumerate
+podrían usarse las de Java directamente ??
+\end_layout
+
+\begin_layout Enumerate
+comandoColor:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Color: usar colores en el comando Sensor en vez de imagenes
+\end_layout
+
+\begin_layout Enumerate
+obtener los colores del escenario según la posición del cursor (pipeta similar
+ a software dibujo o scratch)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+es necesario hacer mas diagramas UML que expliquen la lógica interna de
+ la aplicación (no solo en relación a la Memoria, sino tb a efectos de seguimien
+to y claridad) y actualizar el diagrama de Arquitectura SW para reflejar
+ los nuevos cambios
+\end_layout
+
+\begin_layout Enumerate
+ver si hay demasiadas dependencias en relación al manejo de eventos del
+ escenario y el panel de control y tratar de reducir el acoplamiento en
+ lo posible
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+ver si se pueden unificar las interfaces de gestion de eventos
+\end_layout
+
+\begin_layout Enumerate
+revisar diagramas de clases (DCD) y de interacción (DI)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+la estimación del esfuerzo de las pruebas de las acciones del robot y de
+ las sentencias de control es demasiado optimista.
+ Será necesario invertir mas horas en la prueba, ya que se trata realmente
+ de las pruebas del sistema final
+\end_layout
+
+\begin_layout Enumerate
+Concurrencia: el sistema debe poder ejecutar concurrentemente todos los
+ programas presentes en el escritorio, 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+se necesitara usar un hilo para cada programa, ya que si hay una sentencia
+ wait en uno (por ejemplo), se dormirían todos en la implementación con
+ un solo hilo
+\end_layout
+
+\begin_layout Enumerate
+para desacoplar la gestion de concurrencia del resto de la aplicación, sería
+ conveniente usar un Executor del paquete java.concurrent, que centralice
+ la creación de hilos / programa
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Sentencia Wait: ver como se hace la implementación de la accion semántica
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+en principio se opta por hacer que el hilo del programa lógico al que pertenece
+ espere (hacer un Thread.wait()), hasta que cambie un sensor del P.Control,
+ el cual debe despertar a dicho hilo (mediante un notify()) - ver como realizamo
+s esto
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+el programa debe recibir el aviso, comprobar que los sensores coinciden
+ y despertarse en su caso (el 
+\emph on
+notify()
+\emph default
+ como tal le despierta directamente: probar esto)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+valorar otras soluciones alternativas
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Valoraciones
+\end_layout
+
+\begin_layout Itemize
+Se ha modificado el 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "UC4"
+
+\end_inset
+
+ para englobar el registro de los eventos sensores (input de teclado y color
+ de la posición del Robot)
+\end_layout
+
+\begin_layout Itemize
+Se han incluido los elementos sensores del Panel de Control, 
+\emph on
+Ultima Tecla
+\emph default
+ y 
+\emph on
+Color Actual
+\emph default
+, y se ha probado extensivamente el funcionamiento de los mismos, el cual
+ responde correctamente.
+\end_layout
+
+\begin_layout Itemize
+Se han incluido descripciones auxiliares de los botones del Panel de Control
+ (toolTipText) que aparecen al dejar el cursor posicionado sobre ellos.
+\end_layout
+
+\begin_layout Itemize
+Se ha cambiado la construcción de los comandos en la factoria, para crear
+ con cada comando gráfico su comando lógico asociado a la vez (dentro del
+ constructor), de este modo el ProgramContainer solo tiene que recuperar
+ el comando lógico y añadirlo al programa lógico que se esta creando
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+de este modo queda una implementación mas cohesiva y menos acoplada (la
+ creación de comandos lógicos queda encapsulada dentro del constructor del
+ comando gráfico)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+se ha implementado un delay en los bucles para que las acciones del robot
+ sean observables
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sleep(): en principio se ha implementado con un sleep y asignando un Thread
+ para cada programa, de modo que cada programa no afecte a otros
+\end_layout
+
+\begin_layout Itemize
+se han valorado otras soluciones, si bien no funcionan tan bien como el
+ sleep():
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Timer de Swing (para ello debería implementar ActionListener la Sent_repeat
+ ...)
+\end_layout
+
+\begin_layout Itemize
+Wait()
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+se han creado relaciones entre cada comando Sensor lógico (creados dinámicamente
+ por el ProgramContainer del escritorio) con los sensores del P.Control,
+ dentro del método 
+\emph on
+isTrue()
+\emph default
+ de cada uno de ellos (que comprueba si coincide el sensor del P.Control
+ con el sensor logico de la sentencia), de la siguiente forma:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+cada comando sensor lógico (sentencia) comprueba si su atributo sensor es
+ igual al del P.Control accediendo al singleton del Entorno y desde ahí al
+ sensor del P.Control
+\end_layout
+
+\begin_layout Itemize
+aunque existe acoplamiento ya que cada sentencia sensor debe acceder a un
+ elemento superior en la jerarquía, este se minimiza mediante el uso del
+ Singleton
+\end_layout
+
+\begin_layout Itemize
+no se puede usar el patron Observer, precisamente porque se crean dinámicamente
+ y no hay forma elegante de añadir los suscriptores ...
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+se ha modificado el funcionamiento de los botones del Panel de Control para
+ que inmediatamente después de que el usuario los pulse (y se envíe el evento
+ correspondiente a los oyentes), se devuelva el focus al Escenario, de modo
+ que quede preparado para recibir eventos de control (basicamente los inputs
+ de teclado, ya que los cambios de color debidos al movimiento del robot
+ ya se realizaban correctamente antes de la modificación)
+\end_layout
+
+\begin_layout Itemize
+Se han modificado los comboBox de los Comandos (gráficos) para que se puedan
+ cambiar en tiempo de ejecución, y afecte realmente a la semántica de los
+ programas (y a las acciones del robot).
+\end_layout
+
+\begin_layout Itemize
+Se ha arreglado la creación de programas lógicos (comprobaciones de placed
+ y snapped) para que creen un solo programa por cada bloque de comandos
+ pegados que comience con un Start (comando Iniciar)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\noun on
+pendiente
+\noun default
+ realizar mas pruebas sobre esto, para comprobar la robustez de la solución
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+pendiente
+\noun default
+ la gestion de la eliminación de los comandos de un programa
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\noun on
+pendiente
+\noun default
+ cambiar los items del comboBox del comandoColor para que sean de tipo Color
+ (combo box y sensor logico)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+hay que ver como podemos obtener los colores del fondo del escenario (mouseOver
+ event - mouseEntered y mouseExited)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\noun on
+pendiente
+\noun default
+ la gestion de hilos (Executor) para resolver el problema de la sentencia
+ Wait y la concurrencia en general
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+pendiente
+\noun default
+ diseño gráfico sprites del robot y fondos diversos
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+pendiente
+\noun default
+ UC 5, 6 y 7 (boton Stop y Reset, dado que Start ya funciona como se espera)
+\end_layout
+
+\end_body
+\end_document

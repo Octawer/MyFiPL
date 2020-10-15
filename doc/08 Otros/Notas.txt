@@ -1,0 +1,48 @@
+-------------------------------------------------------------------------------------------------------------								
+												Notas (v.0.11)
+-------------------------------------------------------------------------------------------------------------
+
+* Defensa:
+	> Guion de la presentación:
+		* estructurarla y prepararla de antemano
+	
+* Robot:
+	> sprite con 4 posiciones (up, left, down, right) (gif o png)
+	> PASOS:
+		* ver si cambiamos los pasos para mapas abiertos
+	> Gifs:
+		* ver porque los gifs de un solo uso (no loops) no se recargan cuando se vuelve a abrir el path (moveRobot)
+	> el Robot Listener quizas sobra (ya que es el Escenario el que le maneja; VER ESTO...)
+		
+* UC2 Snap
+    > Snap intermedio
+			
+* patron Observador
+	> se utiliza extensivamente para la gestión de eventos en el Entorno
+	
+* Escenario:
+	> VER SI HAY DEMASIADAS DEPENDENCIAS PARA EL TRATAMIENTO DE LOS EVENTOS (REDUCIR EL ACOPLAMIENTO AL MINIMO)
+	> VER SI TIENE DEMASIADAS RESPONSABILIDADES (AUMENTAR COHESION)
+		* quizás un atributo de clase RobotManager que se encargue del movimiento del robot
+	> MAPAS:
+		* SISTEMA DE PUNTUACION: (cuanto mas baja mejor) -- valorar esta posibilidad para incentivar a los alumnos
+			+ cada pulsación del START: + 5  pts
+			+ cada comando existente en el Escritorio: + 1 pt
+			+ etc...
+		* NEXT MAP (MENU DEL ENTORNO)
+		* SENSOR DE COLORES:
+			+ en base a CUALQUIER pixel del TILE ?? ver si es viable
+			+ ver si añadimos objetos (orbes, globos, señales ... ) a ciertas tiles, y tomamos el color para los sensores en función de estos objetos
+		* LORE:
+			+ establecer historias cortas en base al nombre del mapa (1A, 2B, etc..) y mostrarlos al cargar el mapa (como JOptionPane p.e.)
+			+ como FILES
+			+ como Strings en una clase Lore del dominio
+	> seria mejor (desde el p.vista de la cohesión) que el Escenario tuviera un att al estilo del programContainer para gestionar la mecánica NO-GRAFICA ?
+
+			
+* Usabilidad:
+	> posibilidad de dejar los mensajes de dialogo de los JOptionPane para que los alumnos sepan cuando se ha producido el snap
+		+ indicador visual del SNAP
+	> funcionalidad VER CODIGO (code.org)
+	
+	

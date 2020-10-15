@@ -1,0 +1,55 @@
+------------------------------- v.0.7 -------------------------------------
+
+01 -------------------- Modelo de Negocio ------------------------------
+
+* este Area no tiene aplicación prácticamente, aparte de la comparación de la app con otras existentes (scratch, code.org) de cara a la memoria
+	> es posible que se elimine para el desplieque
+	
+02 ---------------------- Requisitos ----------------------------------
+
+	
+03 ---------------------- Diseño --------------------------------------
+
+- Arquitectura
+	> se ha cambiado la clase Comando para que actue como una clase abstracta, padre de los diferentes tipos de comandos gráficos (ComandoMove, ComandoColor ...) 
+	
+	
+04 ---------------------- Implementacion --------------------------------
+
+- JComboBox
+	> se ha refinado la implementación de los JComboBox que representan la parte editable (o desplegable) de los comandos gráficos
+		+ ahora se crean solo para los comandos que los necesiten (todos excepto los de tipo control)
+		+ ahora admiten los tipos correctos de datos para cada tipo de comando
+		+ los de tipo Color y Move usan imágenes cargadas desde el directorio del proyecto
+			* los de tipo color solo tienen 3 imágenes correspondientes a los 3 primarios (R,G,B) - pendiente extenderla con mas colores
+- Programas lógicos
+	> se ha refinado la creación de los programas lógicos mediante la colocación progresiva de comandos gráficos en el escritorio, respetando las reglas de la gramática desarrollada
+	> se ha verificado que los comandos lógicos que forman los programas se añaden a estos en el orden correcto, mediante mensajes de debug lanzados con el boton Start del P.Control
+	> se ha implementado correctamente el anidamiento de sentencias en los programas
+
+- Robot	
+	> se han asociado correctamente las acciones semánticas de los programas lógicos con las acciones reales que debe realizar el Robot en el Escenario
+
+- Look & feel
+	> se ha cambiado a tipo Nimbus de Java, para un mejor acabado visual
+
+05 ---------------------- Pruebas --------------------------------------
+	
+- Panel de Control
+	> se ha implementado un método dummy para verificar la existencia de comandos y programas lógicos al pulsar el boton Start (ejecutar programa)
+	> se ha verificado la creación de los programas lógicos y la inclusión en el orden correcto, teniendo en cuenta el anidamiento, de los comandos lógicos
+	
+- Robot
+	> se ha probado que el robot responde correctamente a las acciones de movimiento simples (Move, SetPosition y SetSpeed)
+	> pendiente incluir sentencias de control cuando se implementen los sensores del P.Control
+  
+
+06 ---------------------- Despliegue ----------------------------------
+
+		
+07 ------------------- Gestion del Proyecto ----------------------------
+
+	
+08 ---------------------- Otros ----------------------------------------
+
+			

@@ -1,0 +1,57 @@
+------------------------------- v.0.11 -------------------------------------
+
+01 -------------------- Introducción ------------------------------
+
+	
+02 ---------------------- Requisitos ----------------------------------
+
+	
+03 ---------------------- Diseño --------------------------------------
+
+- UML: se han actualizado los diagramas UML de la aplicación y el diagrama de la Arquitectura lógica		 
+
+04 ---------------------- Implementacion --------------------------------
+
+- se ha modificado la lógica del snap:
+
+	* ANTES: iteraba sobre todos los comandos gráficos del Escritorio comprobando secuencialmente con cual se podia acoplar, 
+         en función de si se intersectaban y si era un snap legal, de acuerdo con las reglas de la gramática, y se acoplaba al primero que cumplía las condiciones
+
+	* AHORA: en función del punto de drop, y el rectángulo de la imagen del comando, explora las intersecciones de todos los comandos gráficos del Escritorio 
+		 con el comando que se desea acoplar, y la intersección (rectángulo) con el mayor area (width * height) es el ganador, formando el comando objetivo del snap
+		 
+- se ha ajustado la lógica del STOP
+
+	* switchStopButton: ahora este método cambia no solo la imagen del botón, sino también el estado del Panel de Control, 
+						que influye en las acciones de parar programas (ya sea por boton Stop o por movimiento ilegal)
+	* stopped: se usa un atributo booleano para simular el estado del Panel de Control
+	* moveRobot: ahora no se producen desajustes cuando existen varios programas que mueven al Robot en varias direcciones simultáneamente, 
+				 ya que el evento de Stop que se produce cuando algun programa hace un movimiento ilegal, 
+				 ahora detiene todos los programas e impide la recepción de sucesivos eventos del mismo tipo (hasta que se pulse el boton Stop)
+	* de este modo la lógica del stop es mas consistente y menos propensa a fallos
+	
+	
+- DebugHelper: se han diferenciado los mensajes de diálogo entre tipo scene y tipo info
+	* scene: para los movimientos del Robot en el Escenario
+	* info: para los eventos de comandos gráficos (snap, place, delete, etc.)
+		 
+
+05 ---------------------- Pruebas --------------------------------------
+
+- Jar: Se ha probado la aplicación desde el ejecutable, y parece que funciona como se espera, 
+       siempre que la carpeta de imágenes esté en el mismo directorio del ejecutable
+ 
+- Plan de Pruebas: se han completado las pruebas de funcionalidad previstas en el documento
+
+06 ---------------------- Despliegue ----------------------------------
+
+- MU y MP: se ha redactado el Manual de Usuario y se ha completado el Manual de Pruebas
+
+- Memoria: se han completado y actualizado las secciones pendientes de la Memoria
+		
+07 ------------------- Gestion del Proyecto ----------------------------
+
+
+08 ---------------------- Otros ----------------------------------------
+
+			

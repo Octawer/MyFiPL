@@ -1,0 +1,53 @@
+------------------------------- v.0.9 -------------------------------------
+
+01 -------------------- Introducción ------------------------------
+
+	
+02 ---------------------- Requisitos ----------------------------------
+
+	
+03 ---------------------- Diseño --------------------------------------
+
+- Se han añadido Diagramas de Interacción de los UC 5, 6 y 7 ( Start, Stop, Reset )
+
+- se ha iniciado el diseño gráfico de Robots / Mapas
+
+-  se han incluido descripciones auxiliares (toolTipText) en todos los comandos de la Paleta de Comandos
+	
+04 ---------------------- Implementacion --------------------------------
+
+- Sent_Wait: se ha implementado una solución que usa los métodos wait() / notify() de Thread
+
+- Panel de Control:
+	> se han implementado todas las funcionalidades de los botones del P.Control
+		+ Stop / Resume: solución con flags booleanos y guardas en las sentencias lógicas
+		+ Reset: solución que reinicia la posición del Robot a su posición inicial
+		+ Start: aparte de iniciar la ejecución de los programas, sirve para reanudar la ejecución despues de pararlos (Resume)
+		
+- Comando Color:
+	> se ha implementado la elección de colores de los comandosColor mediante la lista desplegable del comboBox 
+	  y mediante un ColorChooser, pinchando en el recuadro de color del comando. 
+	> los colores son objetos de clase java.awt.Color, y ya no son imágenes.
+
+
+05 ---------------------- Pruebas --------------------------------------
+
+- se han probado las acciones del Robot, las cuales en principio parece que funcionan como se espera
+	> pendiente de realizar pruebas adicionales
+
+- se ha probado la funcionalidad del P.Control
+	> los botones y sensores funcionan correctamente
+	> hay un bug en el Start, por el cual si se presiona sucesivamente se incrementa la velocidad de ejecución de los programas
+	  debido a que se dobla la ejecución de los programas del Escritorio
+	  	+ valorar si este bug puede ser util, o si se debe depurar
+
+
+06 ---------------------- Despliegue ----------------------------------
+
+		
+07 ------------------- Gestion del Proyecto ----------------------------
+
+
+08 ---------------------- Otros ----------------------------------------
+
+			

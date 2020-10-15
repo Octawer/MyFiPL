@@ -1,0 +1,66 @@
+------------------------------- v.0.8 -------------------------------------
+
+01 -------------------- Modelo de Negocio ------------------------------
+
+- Se ha eliminado este area, cambiandola por un apartado de introducción en la memoria (dentro del cual se hablará sobre la diferenciación con respecto a las soluciones existentes)
+- En la estructura del proyecto también se ha renombrado como introducción, para incluir la documentación pertinente si es necesario
+	
+02 ---------------------- Requisitos ----------------------------------
+
+- UC4 Registrar evento Sensor
+	> se ha modificado este UC para englobar el registro de inputs de teclado y color actual de la posicion del Robot, en los sensores del Panel de Control
+	
+03 ---------------------- Diseño --------------------------------------
+
+- se han incluido descripciones auxiliares (toolTipText) en los elementos del P.Control al posicionar el cursor sobre ellos
+
+- se ha modificado el comportamiento de los botones del P.Control para que devuelvan el focus sobre el Escenario una vez pulsados
+	
+	
+04 ---------------------- Implementacion --------------------------------
+
+- Se ha cambiado la construcción de los comandos en la factoria, 
+  para crear con cada comando gráfico su comando lógico asociado a la vez (dentro del constructor),
+  de este modo el ProgramContainer solo tiene que recuperar el comando lógico y añadirlo al programa lógico que se esta creando
+	> de este modo queda una implementación mas cohesiva y menos acoplada (la creación de comandos lógicos queda encapsulada dentro del constructor del comando gráfico)
+	
+- Se han añadido los elementos sensores del P.Control, Ultima tecla y Color actual, y se han establecido sus relaciones con los comandos sensores
+
+- Los comboBox de los comandos gráficos ya aceptan valores en tiempo de ejecución, y estos actualizan correctamente los programas lógicos
+
+- se ha implementado un delay en los bucles (sent_repeat) para que las acciones del robot sean observables por un usuario humano
+
+- cada sensor lógico (comando logico) accede a los sensores del P.Control (a través del singleton del Entorno) para comprobar si es igual o no
+
+- se ha modificado la creación de programas lógicos para que creen un numero adecuado de ellos en relación a los comandos gráficos existentes en el Escritorio
+
+05 ---------------------- Pruebas --------------------------------------
+	
+- los sensores del P.control funcionan correctamente
+
+- se pueden modificar en tº de ejecución los valores de los comboBox de los comandos gráficos
+
+- se han probado las sentencias repeat con sensores de teclado y funcionan como se espera
+
+- se ha probado a introducir sentencias condicionales con sensores de teclado y la funcionalidad parece correcta (dentro y fuera de sentencias repeat)
+
+- el escenario obtiene correctamente el focus despúes de pulsar un boton del P.Control, con lo que la introducción de eventos de teclado en tº ejecución es mas amigable
+
+- pendiente probar sensores de color
+
+- pendiente probar sentencias wait cuando se solucione la gestión de concurrencia
+
+
+06 ---------------------- Despliegue ----------------------------------
+
+- se ha modificado la organización de la memoria, reemplazando el apartado de modelo de negocio por una introducción correspondiente a la visión
+
+- se ha reorganizado el area de requisitos
+		
+07 ------------------- Gestion del Proyecto ----------------------------
+
+- se ha añadido una 5ª iteración a la fase de Construcción (C5)
+
+08 ---------------------- Otros ----------------------------------------
+
+			

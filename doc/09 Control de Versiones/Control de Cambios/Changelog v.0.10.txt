@@ -1,0 +1,75 @@
+------------------------------- v.0.10 -------------------------------------
+
+01 -------------------- Introducción ------------------------------
+
+	
+02 ---------------------- Requisitos ----------------------------------
+
+	
+03 ---------------------- Diseño --------------------------------------
+
+- se ha continuado con el diseño gráfico de Robots / Mapas
+
+- ahora los fondos (mapas) se diferencian en 2 tipos:	
+
+	> Mapas Cerrados: son imagenes creadas ex profeso para la aplicación, las cuales constan de dos imágenes asociadas:
+	
+		+ mapa visible: es una imagen de 512x512 px , creada con casillas o tiles de 32x32 px, con un camino que lleva de la salida a la meta, 
+						y en el que puede haber otras salidas, o trampas, u otros elementos
+						
+		* mapa negativo: es el mapa asociado al mapa visible, a través del nombre (mismo nombre que el visible, pero con «Negative_» como prefijo), 
+						 el cual determina mediante colores cual es el camino válido (tiles en blanco), donde esta la salida, la meta, 
+						 los diferentes objetos (si los hubiere) y el resto son tiles en negro (posiciones no válidas)
+
+	> Mapas Abiertos: son el resto de imágenes que pueden ser cargadas, las cuales no tienen asociado un mapa negativo, 
+					  sino que comparten un mapa Negative_default, el cual es enteramente blanco, para dejar libertad total de movimiento (hasta los bordes)
+
+- el Robot ahora se mueve en pasos de 32 pixels para adecuarse al nuevo diseño de mapas
+
+- el movimiento y posicionamiento del Robot se ha refinado para tener en cuenta los limites del mapa y el camino en los mapas cerrados
+ 
+
+- se ha optado por incluir la funcionalidad de eliminación total de comandos, la cual limpia el Escritorio de comandos y programas (gráficos y lógicos)
+
+- se ha cambiado la forma de añadir los comandos sensores a las sentencias de control de los programas. Ahora se basa en el comando objetivo y no se busca por todo el programa, 
+  de modo que es mas robusto y transparente
+  
+ - debido a lo anterior ya se pueden colocar los comandos sensores en cualquier orden en los programas
+ 
+ - se ha hecho mas robusto el snap, verificando que las ranuras de los comandos estén libres antes de acoplarles nuevos comandos
+	
+04 ---------------------- Implementacion --------------------------------
+
+- Panel de Control:
+	> se han incluido varios botones adicionales
+		+ Clear: elimina del Escritorio de todos los programas y comandos gráficos y lógicos
+		+ MouseCoords: indica visualmente las coordenadas (x,y) de la ultima posición del Escenario donde se hizo click
+		+ MouseColor: indica visualmente el color de la ultima posición del Escenario donde se hizo click
+	> Boton Stop: ahora actúa como un interruptor con dos estados que detiene la ejecución de los programas 
+				  e impide que se ejecuten mientras esté en modo stop, y reanuda y permite la ejecución en modo resume
+
+- clase Map: encapsula toda la lógica de la creación de mapas (tanto abiertos como cerrados) a partir de imágenes, liberando al Escenario de dichas responsabilidades
+
+- clase MapManager: clase con facilidades para la gestión y creación de Mapas
+		
+- se han añadido los atributos rightSlot & downSlot en los Comandos para evitar acoplar varios comandos al mismo
+
+- asimismo se ha incluido el atributo logicalCom en los Comandos, el cual determina el comando lógico asociado a cada comando gráfico
+
+- se ha cambiado Sensor de una interfaz a una clase abstracta que hereda de Sent, para facilitar el snap de Comandos Sensores 
+
+
+05 ---------------------- Pruebas --------------------------------------
+
+- se ha iniciado la redacción y ejecución del Plan de Pruebas de la funcionalidad de la aplicación (especificado en dicho documento)
+
+06 ---------------------- Despliegue ----------------------------------
+
+- se ha iniciado la redacción de la documentación final
+		
+07 ------------------- Gestion del Proyecto ----------------------------
+
+
+08 ---------------------- Otros ----------------------------------------
+
+			

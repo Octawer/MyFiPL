@@ -1,0 +1,953 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+% DO NOT ALTER THIS PREAMBLE!!!
+%
+% This preamble is designed to ensure that the User's Guide prints
+% out as advertised. If you mess with this preamble,
+% parts of the User's Guide may not print out as expected.  If you
+% have problems LaTeXing this file, please contact 
+% the documentation team
+% email: lyx-docs@lists.lyx.org
+
+\usepackage{ifpdf} % part of the hyperref bundle
+\ifpdf % if pdflatex is used
+
+ % set fonts for nicer pdf view
+ \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+
+\fi % end if pdflatex is used
+
+% for correct jump positions whe clicking on a link to a float
+\usepackage[figure]{hypcap}
+
+% the pages of the TOC is numbered roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% define a short command for \textvisiblespace
+\newcommand{\spce}{\textvisiblespace}
+
+% macro for italic page numbers in the index
+\newcommand{\IndexDef}[1]{\textit{#1}}
+
+% for customized page headers/footers
+% only needed because they are only used in one section of the document
+\usepackage{fancyhdr}
+% change header rule width
+\renewcommand{\headrulewidth}{2pt}
+
+% workaround for a makeindex bug, 
+% see sec. "Index Entry Order"
+% only uncomment this when you are using makindex
+%\let\OrgIndex\index 
+%\renewcommand*{\index}[1]{\OrgIndex{#1}}
+\end_preamble
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue, pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\notefontcolor #0000ff
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Lenguaje de Comandos
+\end_layout
+
+\begin_layout Subsection*
+
+\color black
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+Versión
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+Fecha
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+Autor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+13/04/14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color black
+Octavio Martinez
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Léxico (Tokens)
+\end_layout
+
+\begin_layout Itemize
+Control de Flujo
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Start
+\end_layout
+
+\begin_layout Itemize
+Repeat
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+repeat (Bloque) until (Condition)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Wait
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+wait until (C)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+if(!C) pause actions
+\end_layout
+
+\begin_layout Itemize
+else release actions
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+If (NUEVO)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+if (C) do (B)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Sensores (condiciones C)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Color
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[0..5] (p.
+ ej: Color(0) = black) 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Key
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+KeyConstant {a, b, ...
+ A, B ...
+ Z}
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Actuadores
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SetPosition
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+setPosition(x,y)
+\end_layout
+
+\begin_layout Itemize
+check scene bounds (visibleRectangle(), getBounds() ?)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+SetSpeed
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[1 ..
+ 10]
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Move (en principio 4 direcciones en la Grid del escenario)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Move up
+\end_layout
+
+\begin_layout Itemize
+Move down
+\end_layout
+
+\begin_layout Itemize
+Move right
+\end_layout
+
+\begin_layout Itemize
+Move left
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Part*
+Sintaxis (Gramática)
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+\color red
+LA PARTE EN ROJO ESTA PROVISIONALMENTE DESCARTADA
+\end_layout
+
+\begin_layout Standard
+Combinaciones legales de comandos que pueden formar las diferentes estructuras
+ de un programa válido:
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+Programa := Start Cuerpo;
+\end_layout
+
+\begin_layout Itemize
+Programa := Start Bloque;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+esto obliga a que el primer comando válido de un programa sea Start
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ver como afecta al UC1 y 2
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+esta parte en rojo posiblemente la elimine (demasiado generica la gramática
+ con 
+\begin_inset Quotes fld
+\end_inset
+
+Comando
+\begin_inset Quotes frd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+Bloque := Comando Bloque | Comando;
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+Comando := Repeat | Wait | Color | Key | SetPosition | SetSpeed | Move;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color red
+no todas las combinaciones son válidas
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+e.g: Repeat (Move(up)) until (Key(s)) - ok
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+e.g: Repeat(Start) until (Key(s)) - NO
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\color red
+Cuerpo := Bloque Cuerpo | Bloque;
+\end_layout
+
+\begin_layout Itemize
+Bloque := Sent Bloque | Sent;
+\end_layout
+
+\begin_layout Itemize
+Sent := Sent_if | Sent_repeat | Sent_wait | Actuador | 
+\color red
+Bloque_simple
+\color inherit
+;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color red
+bloque_simple = Actuador (en principio no es necesario)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sent_if := If Sensor Bloque;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\noun on
+Con envoltura
+\noun default
+: IF Sensor 
+\emph on
+midIF
+\emph default
+ Bloque 
+\emph on
+endIf;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+midIf
+\emph default
+ representa la parte media de la forma del IF que impide que se acoplen
+ otros comandos a los 
+\emph on
+Sensor 
+\end_layout
+
+\begin_layout Itemize
+en este caso 
+\emph on
+endIf
+\emph default
+ no representa otro comando sino la parte final del mismo IF del inicio
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Sent_repeat := Repeat Bloque Sensor;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\noun on
+\color red
+IMP: en este caso el bloque terminaría con Sensor o envolvemos todos ellos
+ con el repeat al estilo Scratch ??
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+en principio vamos a probar envolviendo todos ellos con el comando Repeat
+ (procederemos igual para el resto de comandos de control, Wait e If), ya
+ que parece una sol.
+ mas robusta
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\noun on
+Con envoltura
+\noun default
+: Repeat Bloque 
+\emph on
+midRepeat
+\emph default
+ Sensor 
+\emph on
+endRepeat;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sent_wait := Wait Sensor;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\noun on
+Con envoltura
+\noun default
+: Wait Sensor 
+\emph on
+endWait;
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\color red
+Bloque_simple := Move | SetPosition | SetSpeed;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color red
+debería ser cualquier combinación válida de comandos que no involucre a
+ Repeat, Wait o If
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sensor := Color | Key;
+\end_layout
+
+\begin_layout Itemize
+Actuador := Move | SetPosition | SetSpeed;
+\end_layout
+
+\begin_layout Part*
+Semántica (Acciones)
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+PENDIENTE DE ESPECIFICACIÓN FORMAL (COMO LAS ACCIONES SEMÁNTICAS DEL HADA
+ COMPILER)
+\end_layout
+
+\begin_layout Itemize
+
+\color black
+Comandos de Control:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color black
+Start: comienzo de programa.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+es una etiqueta sintáctica que marca el inicio del programa, pero no tiene
+ significado asociado (en principio ...)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\color black
+Repeat: bucle estilo “repeat S until C”.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+	sentencias;
+\end_layout
+
+\begin_layout Plain Layout
+
+} while(not C)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\color black
+Wait: espera que se produzca una condición (que uno de los sensores tome
+ el valor esperado).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+while(not C) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	wait();
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If: si se produce una condición C (sensor con valor determinado) se ejecutan
+ las sentencias indicadas
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+if(C) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	sentencias;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\color black
+Sensores:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color black
+Color: comprueba si en la posición del escenario donde se encuentra un robot
+ aparece un determinado color.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+checkColor(int color){
+\end_layout
+
+\begin_layout Plain Layout
+
+	if(this.color == color) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		return true;
+\end_layout
+
+\begin_layout Plain Layout
+
+	} else {
+\end_layout
+
+\begin_layout Plain Layout
+
+		return false;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\color black
+Key: comprueba si se ha pulsado una determinada tecla.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+checkKey(int key) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	if(this.key == key) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		return true;
+\end_layout
+
+\begin_layout Plain Layout
+
+	} else {
+\end_layout
+
+\begin_layout Plain Layout
+
+		return false;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+
+\color black
+Actuadores:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\color black
+SetPosition: determina coordenadas X e Y donde posicionar el robot.
+ Por defecto (0,0), que corresponderán al punto central del escenario
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+setPosition(int x,int y){
+\end_layout
+
+\begin_layout Plain Layout
+
+	robot.x = x;
+\end_layout
+
+\begin_layout Plain Layout
+
+	robot.y = y;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\color black
+SetSpeed: determina la velocidad de desplazamiento del robot.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+setSpeed(int s){
+\end_layout
+
+\begin_layout Plain Layout
+
+	robot.speed = s;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\color black
+Move: desplaza el robot un paso en la dirección de movimiento indicada.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset listings
+lstparams "basicstyle={\scriptsize\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+move(int direction) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	robot.x += dx;
+\end_layout
+
+\begin_layout Plain Layout
+
+	robot.y += dy;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// pendiente de completar dirección y diferenciales de coords
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document

@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------------------------------------								
+												Aspectos Abiertos (v.0.11)
+-------------------------------------------------------------------------------------------------------------
+* GUI
+	> presentación
+		* ajustar el layout y el aspecto visual del entorno
+		* Panel de Control (GridLayout) ajustarlo en el entorno
+		* establecer colores / imagenes de fondo para mejorar el aspecto visual (escritorio con imagen explicativa de fondo quizás)
+	> Escenario
+		* ajustar el fondo para que las coords (0,0) correspondan al centro de la imagen y no a la esquina superior izq (de momento se usa la esquina sup-izq)
+		* diseño de MAPAS
+			+ Mapas ABIERTOS: continuar con el diseño	
+* Pruebas
+	> pruebas de usabilidad
+		
+	
+-------------------------------------------------------------------------------------------------------------	
+												Extensiones
+-------------------------------------------------------------------------------------------------------------	
+	
+* mensajes de JOptionPane como indicadores de Snap 
+
+* Snap intermedio: permitir el snap en medio de un programa y no solo al final del mismo (excepto Sensores que pueden acoplarse en cualquier orden)
+
+* Eliminar un solo comando: habilitar una forma de eliminar comandos individualizadamente de un programa
+
+* Varios Robots: valorar el uso de varios Robots, quizás usando varios Escritorios, uno por cada uno de ellos
+
+* Mapas Cerrados: continuar ampliando la diversidad de los Mapas Cerrados, incluyendo:
+		– Mas niveles de mapas
+		– Items varios: trampas, portales, enemigos, etc
+		– Historia en Mapas: posibilidad de desarrollar una historia del Robot que viaja a través de los mapas 
+		– Cambio de nivel al llegar al Portal: cargar el siguiente mapa de la historia al llegar al Portal 
+		– Items específicos para Sensor Color: crear algun tipo de objetos que definan el color de la casilla (orbes, globos, señales, etc.) para mejorar el uso del SensorColor
+
+* Cuentas de Usuario / Gestion de Proyectos: valorar la posibilidad de ampliar la funcionalidad para poder crear sesiones de usuario y gestionar los proyectos por usuario

@@ -1,0 +1,49 @@
+------------------------------- v.0.1 -------------------------------------
+
+01 -------------------- Modelado de Negocio -------------------------
+
+- Modelo de Dominio
+	> diagrama inicial del modelo de dominio en UML, obtenido a partir del análisis de los Casos de Uso
+	
+02 ---------------------- Requisitos --------------------------------
+- Análisis de Requisitos inicial
+
+	> Visión
+		* Vision inicial
+		* Diagrama Modelo Dominio UML
+		
+	> Modelo de Casos de Uso:
+		* Lista evento-actor-objetivo inicial ( 11 UCs )
+		* UC1 - Colocar Comando -> formato completo
+		* UC2 - UC11 -> formato breve
+		* diagrama UML inicial
+		
+	> Especificación Complementaria
+		* Funcionalidades (resumen UC´s)
+		* URPS+
+		* Interfaces con sistemas externos (pendiente)
+		* Aspectos legales (pendiente)
+	
+	> Glosario
+		* paleta de comandos
+		* escritorio
+		* escenario
+		* comando
+		* boton
+		* accion
+		* arrastrable
+		* apilable
+		* zona de eliminacion
+		* programa
+		* robot
+		* fondo
+		
+07 ------------------------ Gestión del Proyecto --------------------------
+
+- Plan de Proyecto
+
+	> Organizacion del proyecto
+	> Tabla de artefactos del UP y Fases (c / r)
+	> Metodología y Herramientas de desarrollo
+	> Calendario general inicial
+			

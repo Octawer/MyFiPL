@@ -1,0 +1,76 @@
+------------------------------- v.0.2 -------------------------------------
+
+01 -------------------- Modelado de Negocio -------------------------
+
+- Modelo de Dominio
+	> añadidas asociaciones al modelo de Dominio
+	> añadidos atributos al modelo de Dominio
+	
+02 ---------------------- Requisitos --------------------------------
+
+- Diagrama de Secuencia del Sistema (DSS)
+	> creado DSS inicial para el UC1 (escenario principal de éxito o flujo básico)
+	
+- Contratos de las Operaciones (CO)
+	> añadidos los siguientes CO para el UC1
+		* iniciarEntorno()
+		* arrastrarComando()
+
+03 ---------------------- Diseño --------------------------------
+
+- Diagramas de Colaboración
+	> realización del UC1 mediante diagramas de colaboración (contratos CO1 y CO2)
+	
+- Diagrama de Clases de Diseño (DCD)
+	> creado DCD a partir de los diagramas de colaboración y el modelo de dominio
+	
+- Lenguaje de Comandos:
+	> se prevé el desarrollo de un lenguaje de comandos de alto nivel, que defina los comandos existentes, 
+	  su sintaxis (configuraciones en el escritorio) y su semántica (acciones que desarrollará el robot en el escenario)
+	
+04 ---------------------- Implementación --------------------------------
+
+- Inicio de la implementación de las clases principales
+	> se divide inicialmente en 3 paquetes en relación con las posibles capas de la arquitectura (gui / dominio / soporte)
+	> se inicia una implementación a nivel de GUI, para probar la funcionalidad del arrastre de comandos
+	> se incluyen clases auxiliares (package utils) para la mecánica del Drag n Drop de JSwing
+
+- Iniciada implementación para la mecánica del UC1 (a partir de los diagramas de colaboración de los contratos)
+	> iniciarEntorno()
+	> arrastrarComando()
+		* pendiente de refinar
+
+05 ---------------------- Pruebas --------------------------------
+
+- Inicio de la GUI: se preven varias soluciones para la configuracion de los paneles
+	> usar un solo JPanel y un JSeparator para aspecto visual
+		* se mueven los comandos por el panel pero no permanecen en el área de la paleta de comandos
+	> usar JPanel para Panel de programacion y JPanel hijo para escritorio, dejando los comandos directamente en el espacio restante (Paleta de Comandos)
+	> usar un JPanel padre y dos hijos para escritorio y paleta
+		* esta solución no admite uso del ComponentMover como está (habría que modificarlo), y el DnD hace el gesto del drag y reconoce el dropTarget, pero no importa los datos (comando)
+		
+- Arrastre de comandos
+	> se prueba con la mecánica del ComponentMover (utils), pero el arrastre es incompleto, ya que no se "copia" el comando en el escritorio (solo se mueve de la paleta)
+	> usando el DnD y las clases utils (DragListener, DropListener y MyTransferHandler) no se consigue copiar el comando en el escritorio
+
+
+06 ---------------------- Despliegue --------------------------------
+		
+07 ------------------------ Gestión del Proyecto --------------------------
+
+- Plan de Proyecto
+
+	> añadido NetBeans como entorno auxiliar para el desarrollo de la GUI (gestión visual de la misma)
+	> en principio se sigue usando eclipse para el desarrollo principal y la presentación
+	
+- Plan de Iteración
+	> se ha creado y completado el Plan de Iteración para la iteración E1
+	> pendiente de crear el plan para E2
+		* se crearán el ultimo dia de la iteración anterior para la siguiente (a la que hacen referencia)
+		* se completarán con las valoraciones y problemas encontrados al final de la iteración correspondiente
+	
+08 ---------------------- Otros --------------------------------
+
+- Los cambios en la documentación en LyX se han marcado en rojo
+- Se ha añadido un documento de Aspectos Abiertos para reflejar las necesidades y problemas que van suegiendo
+			

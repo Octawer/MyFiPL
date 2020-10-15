@@ -1,0 +1,59 @@
+------------------------------- v.0.4 -------------------------------------
+
+01 -------------------- Modelado de Negocio -------------------------
+	
+02 ---------------------- Requisitos --------------------------------
+
+- completado el Modelo de Casos de Uso, de forma que todos los UC están escritos en formato completo, quedando la funcionalidad general del Sistema definida en anchura
+	> pendiente UC10 y 11 (gestion de usuarios y proyectos) - baja prioridad
+	> añadido UC0 Iniciar Entorno, como factorización de las operaciones comunes a UC1, 2 y 3
+	
+- se ha añadido un documento "Feedback Scratch" 
+	> se listan algunos problemas de usabilidad que podrían encontrar los Alumnos al usar el Sistema (basado en el uso de Scratch como sistema similar)	
+
+03 ---------------------- Diseño --------------------------------
+
+- definición inicial del lenguaje de comandos, especificando su léxico, su sintaxis y su semántica
+ 	> queda refinar dicho lenguaje sobre todo a nivel de acciones semáticas
+ 	> pendiente determinar como se realizará el análisis sintáctico, es decir, como establecer que construcciones de comandos en el escritorio se consideran válidas
+
+- definido un conjunto de clases de diseño relativas al dominio de la apliación, contenidas en el paquete «lenguaje»
+ 	> se ha creado asimismo un diagrama de clases de diseño (DCD) que muestra la arquitectura de dicho paquete
+	
+04 ---------------------- Implementación --------------------------------
+
+- Package lenguaje:
+	> contiene la implementación de las clases que representan el lenguaje definido, relacionadas con el dominio de la aplicación
+		* estas clases son las que realmente representan el dominio lógico de la aplicación junto con el robot y el fondo (package dominio)
+		  de modo que habrá que reordenar los paquetes
+
+05 ---------------------- Pruebas --------------------------------
+  
+- Se han implementado un fondo y un robot de pruebas, para ver su influencia en la creacion del entorno
+	> estos son solo provisionales y se modificarán mas adelante
+
+
+06 ---------------------- Despliegue --------------------------------
+		
+07 ------------------------ Gestión del Proyecto --------------------------
+
+- Plan de Proyecto
+	> es posible que se añada alguna iteración adicional a la fase de construcción
+	> los % de definición de UC y sus implementaciones / pruebas reflejados, probablemente variarán respecto a la estimación inicial y serán modificados en sucesivas iteraciones
+		* el UC5 es el mas extenso ya que dentro de el se establece el lenguaje de comandos y las funcionalidades centrales de la aplicación
+			+ se partirá en subcasos de uso
+			+ su % sobre el total de desarrollo es muy elevado
+	> se han modificado las iteraciones de la fase de construcción (C1, C2 y C3) para reflejar los cambios en la evolución del proyecto (porcentajes y tareas)
+
+	> se ha concluido la Fase de Elaboración ya que los aspectos centrales del Sistema estan cubiertos en anchura
+	
+	> en la siguiente iteración se iniciará la fase de Construcción, para ir desarrollando iterativamente las soluciones definitivas a las funcionalidades previstas
+	
+	
+08 ---------------------- Otros --------------------------------
+
+- Los cambios en la documentación no se marcan en rojo en esta ocasión y de aqui en adelante
+	> puede llevar a confusiones con otras partes del documento que se quieran resaltar
+	> los cambios se reflejan en este documento de cambios en lineas generales
+- Se ha corregido la numeración de version del documento de Notas y Aspectos abiertos, que tenían un número de version erróneo
+			

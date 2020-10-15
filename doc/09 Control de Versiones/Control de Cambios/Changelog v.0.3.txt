@@ -1,0 +1,98 @@
+------------------------------- v.0.3 -------------------------------------
+
+01 -------------------- Modelado de Negocio -------------------------
+	
+02 ---------------------- Requisitos --------------------------------
+
+- Detallados UC2 y UC3 (escritos en formato completo)
+
+- Definidos DSS iniciales para UC2 y 3
+	
+- Contratos de las Operaciones (CO)
+	> acoplarComando()
+	> eliminarComando()
+	
+- Añadida terminología del desarrollo utilizado (Proceso Unificado)
+
+03 ---------------------- Diseño --------------------------------
+
+- Realizaciones de los UC abordados en la iteración (UC2 y 3)
+	> diagramas de interacción para los contratos abordados de dichos UC
+		* DI acoplarComando
+		* DI eliminarComando
+	> Estos diagramas serán revisados y refinados partiendo del código actual desarrollado (ingeniería inversa)
+	
+- Diagrama de Clases de Diseño (DCD)
+	> se ha actualizado mediante ObjectAid UML, generando dos diagramas separados por claridad
+		* DCD gui: el diagrama de clases que muestra la estructura de alto nivel de la GUI
+		* DCD ghost: DCD centrado en la estructura de alto nivel del sistema de Drag & Drop que utiliza la GUI
+		
+- Arquitectura SW:
+	> se ha añadido un primer boceto de la arquitectura lógica que presenta la aplicación
+		* será refinado y completado en iteraciones sucesivas
+		
+- Pendiente de definir Diagramas de Interacción para la mecánica del Drag n Drop implementada mediante ingeniería inversa (ObjectAid UMl)
+	
+04 ---------------------- Implementación --------------------------------
+
+- Package ghost:
+	> contiene la implementación de la mecánica de Drag n Drop que utiliza la GUI
+	> se ha trabajado principalmente sobre este paquete en la presente iteración
+	
+- Package gui:
+	> formado por las clases de alto nivel que implementan los elementos principales de la GUI
+	> se ha trabajado principalmente sobre este paquete en la presente iteración
+
+- Package notUsed:
+	> como indica su nombre, se crea por conveniencia para almacenar clases descartadas en la iteración actual, pero que podrían usarse o modificarse para su uso en el futuro
+	
+- Package dominio:
+	> incluye las clases del ambito lógico de la aplicación
+		* pendiente en la presente iteración
+
+05 ---------------------- Pruebas --------------------------------
+
+- JPanel límites: 
+	> inicialmente parecía que los limites del jPanel no estaban bien definidos ya que al arrastrar los comandos parecía como si el área del EScritorio
+	  estuviera desplazada hacia la derecha del panel visible
+	  	* Solucionado: se ha cambiado getBounds() to getVisibleRect() in ghostDropManger.isInTarget(), para la comprobación de la acción de Drop o de Move				   
+	  	
+- Colisiones:
+		* para la acción de acoplar comandos se ha probado la comprobación de colisiones de las etiquetas que los definen, comprobando si el rectángulo de la etiqueta
+		  contiene algun punto de las 4 esquinas de algun comando ya depositado en el Escritorio
+		* PENDIENTE: ver por que a veces no las reconoce, tanto en la acción de Drop como de Move
+		
+- Uso de varias labels:
+		* se ha probado a colocar varios comandos iniciales en la Paleta de Comandos, pero parece que solo responde a eventos el primero
+		* PENDIENTE: una label puede tener varios listeners, pero se puede aplicar el mismo oyente para varias?
+
+- Pruebas con Comandos NO RECTANGULARES:
+	> los comandos muy posiblemente tengan formas diversas que encajen entre si según la sintaxis que se construya
+	> ver el uso de la clase Shape de Swing
+
+- Se prevé la posibilidad de automatizar las pruebas ?
+	> en principio es un sistema interactivo - no veo como automatizar pruebas de comportamiento del mismo sin interacción humana sobre la GUI
+
+
+06 ---------------------- Despliegue --------------------------------
+		
+07 ------------------------ Gestión del Proyecto --------------------------
+
+- Plan de Proyecto
+	> añadido ObjectAidUMl como SW adicional de creación y gestión de diagramas UML
+	> es posible que se añada alguna iteración adicional a la planificación inicial (C4 y quizás E4): se valorará durante la siguiente iteración
+	> los % de definición de UC y sus implementaciones / pruebas reflejados, probablemente variarán respecto a la estimación inicial y serán modificados en sucesivas iteraciones
+		* el UC5 es el mas extenso ya que dentro de el se establece el lenguaje de comandos y las funcionalidades centrales de la aplicación
+			+ se partirá en subcasos de uso
+			+ su % sobre el total de desarrollo es muy elevado
+	
+- Plan de Iteración
+	> se ha completado la valoración el Plan de Iteración para la iteración E2
+	> se ha creado el plan para E3
+	
+	
+08 ---------------------- Otros --------------------------------
+
+- Los cambios en la documentación en LyX se han marcado en rojo
+- Se ha añadido un documento de Notas para el seguimiento de ideas o problemas que van surgiendo durante el desarrollo
+			

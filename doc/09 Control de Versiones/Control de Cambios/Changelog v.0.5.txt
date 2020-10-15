@@ -1,0 +1,57 @@
+------------------------------- v.0.5 -------------------------------------
+
+01 -------------------- Modelo de Negocio -------------------------
+	
+02 ---------------------- Requisitos --------------------------------
+
+- Diagramas de Secuencia (DSS)
+	> se han actualizado los DSS de los UC0 a 4
+	
+- Modelo de Casos de Uso
+	> se han actualizado varios Casos de Uso, para reflejar mas fielmente la funcionalidad real detallada
+	
+- Contratos de las Operaciones:
+	> pendiente de actualizarlos (quizás se elimine alguno, ya que los casos de uso son mas precisos ahora)
+
+03 ---------------------- Diseño --------------------------------
+
+- Diagramas de Interacción:
+	> ae han actualizado los DI de varias operaciones relacionadas con los UC0 a 4
+	
+- Arquitectura:
+	> se ha actualizado la arquitectura sw para incluir al paquete lenguaje y las relaciones con este
+	> pendiente de refinarla para reducir el acoplamiento del dominio con la GUI
+	
+- Escenario:
+	> se ha diseñado una solución inicial del robot y el fondo del escenario y sus relaciones con el resto de la GUI
+	
+04 ---------------------- Implementacion --------------------------------
+
+- UC2 Snap:
+	> se ha implementado una solución inicial a este caso de uso, mediante el solapamiento de JLabels para que las imágenes parezcan acopladas gráficamente
+	> pendiente de refinar esta solución y ver si es viable
+		+ en caso contrario probar otras vías consideradas anteriormente (shapes, clipping image, comprobación de pixels, etc.)
+		
+- UC8 y 9:
+	> se han implementado las funcionalidades de cargar robot y fondo, y se ha actualizado la arquitectura resultante
+	
+- Robot / Fondo:
+	> se ha implementado una versión inicial del robot y fondo de escenario, en la cual el robot se mueve con las teclas de dirección
+	> es necesario adaptarla al caso que nos ocupa para que reaccione a las acciones semánticas de los programas del escritorio
+
+05 ---------------------- Pruebas --------------------------------
+  
+- Robot:
+	> al presionar un boton del panel de control, se suspende la detección de eventos del teclado del escenario
+	
+- Snap:
+	> en ocasiones no se comporta correctamente, y no realiza la acción de snap, aunque el comando origen este realmente solapado al comando destino
+
+
+06 ---------------------- Despliegue --------------------------------
+		
+07 ------------------- Gestion del Proyecto --------------------------
+	
+08 ---------------------- Otros --------------------------------
+
+			

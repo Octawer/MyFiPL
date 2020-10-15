@@ -1,0 +1,61 @@
+------------------------------- v.0.6 -------------------------------------
+
+01 -------------------- Modelo de Negocio ------------------------------
+	
+02 ---------------------- Requisitos ----------------------------------
+
+- CO5
+	> se han actualizado los contratos de las operaciones, incluyendo CO5 Colocar Comando, que define el nivel lógico de dicha acción
+	
+
+03 ---------------------- Diseño --------------------------------------
+
+- DI CO5
+	> se ha añadido el diagrama de interacción (DI) correspondiente a dicha accion, bajo el nombre de placeCommand()
+	
+- Diseño grafico de Comandos
+	> se ha realizado un diseño gráfico preliminar de los comandos
+	> se ha modificado el diseño lógico para incluir una parte editable (jComboBox)
+	
+	
+04 ---------------------- Implementacion --------------------------------
+
+- UC2 Snap
+	> se ha completado parcialmente este UC, refinando el comportamiento gráfico y añadiendo el componente lógico de construcción de programas
+
+- Semántica
+	> se ha implementado una solución inicial para la asociación de los comandos graficos y lógicos con las acciones del robot
+	
+- Panel de Control
+	> se han implementado métodos para relacionar las acciones de los botones del panel con el resto del entorno (escenario y escritorio)
+	
+- Paleta de Comandos
+	> se ha actualizado la vista de la paleta de comandos para que muestre todos los comandos agrupados por tipo
+
+
+05 ---------------------- Pruebas --------------------------------------
+
+- UC2 Snap
+	> se han realizado pruebas sobre el acoplamiento de comandos para validar la solución propuesta (pendiente refinar acoplamiento sensores)
+	> los comandos ya no muestran un comportamiento impredecible y se acoplan como se espera
+	> al mover los comandos (GhostMoveManager) no se elimina el comando lógico asociado del programa al que pertenece
+	> pendiente de realizar mas pruebas y documentar resultados
+	
+- Panel de Control
+	> se ha implementado un método dummy para verificar la existencia de comandos y programas lógicos al pulsar el boton Start (ejecutar programa)
+  
+
+06 ---------------------- Despliegue ----------------------------------
+
+- Memoria
+	> se ha actualizado la memoria con la información de la iteración actual (C2)
+		
+07 ------------------- Gestion del Proyecto ----------------------------
+
+- Plan de Proyecto
+	> se ha modificado añadiendo una iteracion adicional en la fase de construcción (C4)
+	> se ha modificado la planificación en consecuencia
+	
+08 ---------------------- Otros ----------------------------------------
+
+			
