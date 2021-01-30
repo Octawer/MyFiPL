@@ -49,9 +49,9 @@ Esto es debido a que la mayoría de esos documentos individuales se han agregado
 Documentación
 -------
 
-<a href="https://github.com/Octawer/MyFiPL/tree/master/doc">Documentacion</a>
-<a href="https://github.com/Octawer/MyFiPL/tree/master/doc/10%20Memoria">Memoria</a>
-<a href="https://github.com/Octawer/MyFiPL/wiki">Wiki</a>
+<div><a href="https://github.com/Octawer/MyFiPL/tree/master/doc">Documentacion</a></div>
+<div><a href="https://github.com/Octawer/MyFiPL/tree/master/doc/10%20Memoria">Memoria</a></div>
+<div><a href="https://github.com/Octawer/MyFiPL/wiki">Wiki</a></div>
 
 
 Author
