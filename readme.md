@@ -53,6 +53,15 @@ Documentación
 <div><a href="https://github.com/Octawer/MyFiPL/tree/master/doc/10%20Memoria">Memoria</a></div>
 <div><a href="https://github.com/Octawer/MyFiPL/wiki">Wiki</a></div>
 
+Screens
+-------
+
+<div>
+<img src="doc\11 Screenshots\PFG_VideoEjemplo_nv_4A_Moment.jpg" />
+<img src="doc\11 Screenshots\PFG_VideoEjemplo_nv_4A_Moment_2.jpg" />
+<img src="doc\11 Screenshots\PFG_VideoEjemplo_nv_4A_Moment_3.jpg" />
+</div>
+
 
 Author
 -------
