@@ -46,6 +46,13 @@ En las diversas carpetas dentro del directorio «Documentación PFG» de la Arqu
 Esto es debido a que la mayoría de esos documentos individuales se han agregado para conformar la presente memoria.
 </div>
 
+Documentación
+-------
+
+<a href="https://github.com/Octawer/MyFiPL/tree/master/doc">Documentacion</a>
+<a href="https://github.com/Octawer/MyFiPL/tree/master/doc/10%20Memoria">Memoria</a>
+<a href="https://github.com/Octawer/MyFiPL/wiki">Wiki</a>
+
 
 Author
 -------
